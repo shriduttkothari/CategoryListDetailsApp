@@ -24,5 +24,13 @@ data class SubCategory(
     @NonNull
     @ColumnInfo(name = "is_favorite")
     val isFavorite: Int){
+
+    companion object {
+        var BY_TITLE_ASCENDING =
+            Comparator<SubCategory> { object1, object2 -> object1!!.title!!.compareTo(object2!!.title!!) }
+
+        var BY_TITLE_DESCENDING =
+            Comparator<SubCategory> { object1, object2 -> object2!!.title!!.compareTo(object1!!.title!!) }
+    }
 }
 

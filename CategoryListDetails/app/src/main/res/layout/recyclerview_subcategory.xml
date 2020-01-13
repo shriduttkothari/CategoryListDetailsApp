@@ -25,10 +25,10 @@
 
                     <TextView
                     android:id="@+id/textViewSubCategoryTitle"
-                    android:textSize="18sp"
+                    android:textSize="25sp"
                     android:textColor="#1A1A1A"
                     android:text="@{subCategory.title}"
-                    tools:text="Category Title"
+                    tools:text="Subcategory Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 

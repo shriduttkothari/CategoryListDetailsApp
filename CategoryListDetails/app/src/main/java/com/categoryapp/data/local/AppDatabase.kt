@@ -18,7 +18,7 @@ abstract class AppDatabase : RoomDatabase() {
     companion object {
 
         @Volatile private var INSTANCE: AppDatabase? = null
-        @Volatile private var DATABASE_NAME: String = "science_facts.db"
+        @Volatile private var DATABASE_NAME: String = "app.db"
 
 
         fun getInstance(context: Context): AppDatabase =

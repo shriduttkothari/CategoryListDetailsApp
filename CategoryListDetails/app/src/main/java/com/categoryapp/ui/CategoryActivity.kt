@@ -6,6 +6,7 @@ import com.categoryapp.R
 
 /**
  * Category Activity
+ *
  * @author Shridutt.Kothari
  */
 class CategoryActivity: AppCompatActivity() {

@@ -12,8 +12,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.categoryapp.Injection
 import com.categoryapp.R
-import com.categoryapp.data.model.Category
 import com.categoryapp.data.model.SubCategory
+import com.categoryapp.utils.AppConstants
 import kotlinx.android.synthetic.main.fragment_subcategory.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -40,11 +40,11 @@ class SubCategoryFragment : Fragment(), SubCategoryRecyclerViewClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val catgoryId: Int= activity!!.intent.getIntExtra("categoryId", 0)
+        val categoryId: Int= activity!!.intent.getIntExtra(AppConstants.CATEGORY_ID, 0)
         viewModelFactory = Injection.provideSubCategoryViewModelFactory(this.requireContext())
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(SubCategoryViewModel::class.java)
 
-        viewModel.getSubCategories(catgoryId)
+        viewModel.getSubCategories(categoryId)
 
         viewModel.subCategories.observe(viewLifecycleOwner, Observer { subCategoryList ->
             recycler_view_subcategory.also {
@@ -59,6 +59,8 @@ class SubCategoryFragment : Fragment(), SubCategoryRecyclerViewClickListener {
         Toast.makeText(view.context, "Not implemented", Toast.LENGTH_LONG).show();
 //        (activity as SubCategoryActivity?)?.let{
 //            val intent = Intent (it, DetailActivity::class.java)
+//            intent.putExtra(AppConstants.SUB_CATEGORY_ID, subCategory.id)
+//            intent.putExtra(AppConstants.SUB_CATEGORY_TITLE, subCategory.title)
 //            it.startActivity(intent)
 //        }
     }
@@ -121,5 +123,4 @@ class SubCategoryFragment : Fragment(), SubCategoryRecyclerViewClickListener {
         }
         alertDialogBuilder.create().show()
     }
-
 }

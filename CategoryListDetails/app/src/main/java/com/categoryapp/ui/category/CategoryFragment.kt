@@ -15,9 +15,9 @@ import com.categoryapp.R
 import com.categoryapp.data.model.Category
 import com.categoryapp.ui.CategoryActivity
 import com.categoryapp.ui.SubCategoryActivity
+import com.categoryapp.utils.AppConstants
 import kotlinx.android.synthetic.main.fragment_category.*
 import java.util.*
-
 
 /**
  * Category Fragment to show categories in a recyclerview
@@ -58,7 +58,8 @@ class CategoryFragment : Fragment(), CategoryRecyclerViewClickListener {
     override fun onRecyclerViewItemClick(view: View, category: Category) {
         (activity as CategoryActivity?)?.let{
             val intent = Intent (it, SubCategoryActivity::class.java)
-            intent.putExtra("categoryId", category.id)
+            intent.putExtra(AppConstants.CATEGORY_ID, category.id)
+            intent.putExtra(AppConstants.CATEGORY_TITLE, category.title)
             it.startActivity(intent)
         }
     }

@@ -1,13 +1,10 @@
 <resources>
-    <string name="app_name">Science Facts</string>
+    <string name="app_name">Category List Details</string>
     <string name="search">Search</string>
     <string name="sort">Sort</string>
     <string name="ascending">Ascending</string>
     <string name="descending">Descending</string>
-    <string name="name">&#160;(Name)</string>
+    <string name="title">&#160;(Title)</string>
     <string name="age">&#160;(Age)</string>
     <string name="sort_by">Sort By</string>
-    <string name="years">&#160;yrs</string>
-    <string name="retry">Retry</string>
-    <string name="unable_to_fetch_data">Unable to fetch data from server.</string>
 </resources>

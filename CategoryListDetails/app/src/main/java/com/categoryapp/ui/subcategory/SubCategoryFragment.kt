@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.categoryapp.Injection
 import com.categoryapp.R
 import com.categoryapp.data.model.SubCategory
+import com.categoryapp.ui.SubCategoryActivity
 import com.categoryapp.utils.AppConstants
 import kotlinx.android.synthetic.main.fragment_subcategory.*
 import java.util.*
@@ -57,12 +58,12 @@ class SubCategoryFragment : Fragment(), SubCategoryRecyclerViewClickListener {
 
     override fun onRecyclerViewItemClick(view: View, subCategory: SubCategory) {
         Toast.makeText(view.context, "Not implemented", Toast.LENGTH_LONG).show();
-//        (activity as SubCategoryActivity?)?.let{
-//            val intent = Intent (it, DetailActivity::class.java)
-//            intent.putExtra(AppConstants.SUB_CATEGORY_ID, subCategory.id)
+        (activity as SubCategoryActivity?)?.let{
+//            val intent = Intent (it, DetailsActivity::class.java)
+//            intent.putExtra(AppConstants.SUB_CATEGORY_ID, subCategory.subcategoryId)
 //            intent.putExtra(AppConstants.SUB_CATEGORY_TITLE, subCategory.title)
 //            it.startActivity(intent)
-//        }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {

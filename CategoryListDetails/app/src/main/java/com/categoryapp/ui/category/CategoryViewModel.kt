@@ -9,7 +9,8 @@ import com.categoryapp.utils.Coroutines
 import kotlinx.coroutines.Job
 
 /**
- *
+ * Category View Model
+ * 
  * @author Shridutt.Kothari
  */
 class CategoryViewModel(private val categoryDao: CategoryDao) : ViewModel() {

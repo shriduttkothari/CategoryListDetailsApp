@@ -1,10 +1,10 @@
-package com.categoryapp.ui.category
+package com.categoryapp.ui.details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.categoryapp.data.dao.CategoryDao
-import com.categoryapp.data.model.Category
+import com.categoryapp.data.dao.DetailsDao
+import com.categoryapp.data.model.Details
 import com.categoryapp.utils.Coroutines
 import kotlinx.coroutines.Job
 
@@ -13,17 +13,17 @@ import kotlinx.coroutines.Job
  *
  * @author Shridutt.Kothari
  */
-class CategoryViewModel(private val categoryDao: CategoryDao) : ViewModel() {
+class DetailsViewModel(private val detailsDao: DetailsDao) : ViewModel() {
 
     private lateinit var job: Job
 
-    private val _category = MutableLiveData<List<Category>>()
-    val categories: LiveData<List<Category>> get() = _category
+    private val _details = MutableLiveData<Details>()
+    val details: LiveData<Details> get() = _details
 
-    fun getCategories() {
+    fun getDetails(subCategoryId: Int) {
         job = Coroutines.ioThenMain(
-            { categoryDao.getAllCategories()},
-            { _category.value = it }
+            { detailsDao.getDetails(subCategoryId)},
+            { _details.value = it }
         )
     }
 

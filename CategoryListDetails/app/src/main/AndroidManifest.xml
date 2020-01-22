@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.SubCategoryActivity" />
-
+        <activity android:name=".ui.DetailsActivity" />
         <activity android:name=".ui.SettingsActivity" />
     </application>
 

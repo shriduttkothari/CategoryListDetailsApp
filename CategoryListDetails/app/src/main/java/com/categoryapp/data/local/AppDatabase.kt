@@ -5,15 +5,18 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.categoryapp.data.dao.CategoryDao
+import com.categoryapp.data.dao.DetailsDao
 import com.categoryapp.data.dao.SubCategoryDao
 import com.categoryapp.data.model.Category
+import com.categoryapp.data.model.Details
 import com.categoryapp.data.model.SubCategory
 
-@Database(entities = [Category::class, SubCategory::class], version = 1)
+@Database(entities = [Category::class, SubCategory::class, Details::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun categoryDao(): CategoryDao
     abstract fun subCategoryDao(): SubCategoryDao
+    abstract fun detailsDao(): DetailsDao
 
     companion object {
 
